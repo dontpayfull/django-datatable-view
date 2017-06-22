@@ -356,7 +356,7 @@ class DatatableOptions(UserDict):
                     is_local_field = False
                     if column.fields:
                         base_field_name = column.fields[0].split('__')[0]
-                        if base_field_name in [f.name for f in self.model._meta.get_fields()]:
+                        if base_field_name in [f.name for f in self._model._meta.get_fields()]:
                             is_local_field = True
 
                     if not column.fields or len(column.fields) > 1 or not is_local_field:
