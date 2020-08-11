@@ -11,7 +11,7 @@ except ImportError:
     from UserDict import UserDict
 
 from django.db import models
-from django.db.models import FieldDoesNotExist
+from django.core.exceptions import FieldDoesNotExist
 from django.template.loader import render_to_string
 try:
     from django.forms.utils import flatatt
