@@ -59,7 +59,7 @@ class DatatableMixin(MultipleObjectMixin):
 
         """
 
-        if request.is_ajax() or request.GET.get('ajax') == 'true':
+        if request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest' or request.GET.get('ajax') == 'true':
             return self.get_ajax(request, *args, **kwargs)
         return super(DatatableMixin, self).get(request, *args, **kwargs)
 
